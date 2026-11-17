@@ -5,7 +5,7 @@ on:
 
 env:
   DOTNET_VERSION: 10.0.x
-  PROJECT_PATH: ./Lab07
+  PROJECT_PATH: ./ConsoleApp1
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,3 +25,7 @@ jobs:
       - name: Restore dependencies
         shell: bash
         run: dotnet restore "$PROJECT_PATH"
+
+      - name: Build project
+        shell: bash
+        run: dotnet build "$PROJECT_PATH" --configuration Release --no-restore
