@@ -5,7 +5,7 @@ on:
 
 env:
   DOTNET_VERSION: 10.0.x
-  PROJECT_PATH: ./ConsoleApp1
+  PROJECT_PATH: ./Lab07
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,3 +29,7 @@ jobs:
       - name: Build project
         shell: bash
         run: dotnet build "$PROJECT_PATH" --configuration Release --no-restore
+
+      - name: Run project
+        shell: bash
+        run: dotnet run --project "$PROJECT_PATH" --configuration Release --no-build
